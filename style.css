@@ -1,0 +1,131 @@
+body {
+    background-color: darkslategray;
+    font-family: 'PT Sans', sans-serif;
+    user-select: none;
+}
+.leftBox {
+    float: left;
+    width: 50%;
+}
+.rightBox {
+    float: right;
+    width: 50%;
+}
+.emeraldOre {
+    margin-left: 10%;
+    margin-top: 10%;
+    margin-bottom: 50px;
+    cursor: pointer;
+    float: left
+}
+.clearfix {
+    clear: both;
+}
+.score {
+    font-size: 120px;
+    margin-left: 15px;
+    float: left;
+}
+.emerald {
+    float: left;
+    margin-left: 10%;
+    height: 100px;
+    margin-top: 30px;
+}
+.reset {
+    color: #dbdbde;
+    font-size: 45px;
+    margin-left: 10%;
+    margin-top: 7%;
+    width: 400px;
+    height: 50px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: black;
+    cursor: pointer;
+}
+.stonePickaxe {
+    height: 80px;
+    float: right;
+}
+.ironPickaxe {
+    height: 80px;
+    float: right;
+}
+.goldPickaxe {
+    height: 80px;
+    float: right;
+}
+.diamondPickaxe {
+    height: 80px;
+    float: right;
+}
+.obsidian {
+    height: 80px;
+    float: right;
+}
+.stonePickBox {
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+ .ironPickPox {
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+ .goldPickBox {
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+ .diamondPickBox {
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+.obsidianBox {
+    float: right;
+    margin-right: 10%;
+    margin-top: 10%;
+}
+.buyButton {
+    float: right;
+    margin-top: 10%;
+    margin-right: 30px;
+    cursor: pointer;
+    color: #dbdbde;
+    font-size: 16px;
+    width: 70px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: black;
+}
+.stonePickaxeCost {
+    float: right;
+    font-size: 30px;
+    color: #dbdbde;
+    margin-right: 25px;
+    margin-top: 30px
+}
+.emeraldBuy {
+    float: right;
+    margin-right: 5px;
+    height: 31px;
+    margin-top: 35px;
+}
+.power {
+    float: left;
+    margin-top: 10%;
+    margin-left: 5%;
+    font-size: 40px;
+    color: #dbdbde;
+}
+

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>clicker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+<div class="leftBox">
+    <img src="photos/emeraldOre.webp" alt="" id="emeraldOre" onclick="addScore()" class="emeraldOre">
+    <div class="power" id="power"></div>
+    <div class="clearfix"></div>
+    <img src="photos/emerald.webp" alt="" class="emerald">
+    <div id="score" class="score"></div>
+    <div class="clearfix"></div>
+    <div id="reset" class="reset" onclick="reset()">Zresetuj postęp</div>
+</div>
+<div class="rightBox">
+    <div class="stonePickBox">
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/stonePickaxe.webp" alt="" class="stonePickaxe">
+        <div class="buyButton" id="buyStonePickaxe" onclick="buyStonePickaxe()">Kup</div>
+        <div class="stonePickaxeCost">15</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="ironPickPox">
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/ironPickaxe.webp" alt="" class="ironPickaxe">
+        <div class="buyButton" id="buyIronPickaxe" onclick="buyIronPickaxe()">Kup</div>
+        <div class="stonePickaxeCost">150</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="goldPickBox">
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/goldPickaxe.webp" alt="" class="goldPickaxe">
+        <div class="buyButton" id="buyGoldPickaxe" onclick="buyGoldPickaxe()">Kup</div>
+        <div class="stonePickaxeCost">1500</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="diamondPickBox">
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/diamondPickaxe.webp" alt="" class="diamondPickaxe">
+        <div class="buyButton" id="buyDiamondPickaxe" onclick="buyDiamondPickaxe()">Kup</div>
+        <div class="stonePickaxeCost">15000</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="obsidianBox">
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/obsidian.webp" alt="" class="obsidian">
+        <div class="buyButton" id="buyObsidian" onclick="buyObsidian()">Kup</div>
+        <div class="stonePickaxeCost">50000</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+</div>
+
+
+</body>
+</html>
