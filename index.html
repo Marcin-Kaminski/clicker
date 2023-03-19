@@ -21,43 +21,49 @@
     <div id="score" class="score"></div>
     <div class="clearfix"></div>
     <div id="reset" class="reset" onclick="reset()">Zresetuj postęp</div>
+    <div onclick="majer()" class="buyButton">DODAJ</div>
 </div>
 <div class="rightBox">
-    <div class="stonePickBox">
+    <div class="PickBox">
+        <div class="stonePickaxeCost" id="stonePickCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
-        <img src="photos/stonePickaxe.webp" alt="" class="stonePickaxe">
-        <div class="buyButton" id="buyStonePickaxe" onclick="buyStonePickaxe()">Kup</div>
+        <img src="photos/stonePickaxe.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyStonePickaxe" onclick="buyPickaxe(15, 1)">Kup</div>
         <div class="stonePickaxeCost">15</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
-    <div class="ironPickPox">
+    <div class="PickBox">
+        <div class="stonePickaxeCost" id="ironPickCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
-        <img src="photos/ironPickaxe.webp" alt="" class="ironPickaxe">
-        <div class="buyButton" id="buyIronPickaxe" onclick="buyIronPickaxe()">Kup</div>
+        <img src="photos/ironPickaxe.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyIronPickaxe" onclick="buyPickaxe(150, 5)">Kup</div>
         <div class="stonePickaxeCost">150</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
-    <div class="goldPickBox">
+    <div class="PickBox">
+        <div class="stonePickaxeCost" id="goldPickCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
-        <img src="photos/goldPickaxe.webp" alt="" class="goldPickaxe">
-        <div class="buyButton" id="buyGoldPickaxe" onclick="buyGoldPickaxe()">Kup</div>
+        <img src="photos/goldPickaxe.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyGoldPickaxe" onclick="buyPickaxe(1500, 10)">Kup</div>
         <div class="stonePickaxeCost">1500</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
-    <div class="diamondPickBox">
+    <div class="PickBox">
+        <div class="stonePickaxeCost" id="diamondPickCunt">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
-        <img src="photos/diamondPickaxe.webp" alt="" class="diamondPickaxe">
-        <div class="buyButton" id="buyDiamondPickaxe" onclick="buyDiamondPickaxe()">Kup</div>
+        <img src="photos/diamondPickaxe.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyDiamondPickaxe" onclick="buyPickaxe(15000, 100)">Kup</div>
         <div class="stonePickaxeCost">15000</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
-    <div class="obsidianBox">
+    <div class="PickBox">
+        <div class="stonePickaxeCost" id="obsidianCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
-        <img src="photos/obsidian.webp" alt="" class="obsidian">
+        <img src="photos/obsidian.webp" alt="" class="pickaxe">
         <div class="buyButton" id="buyObsidian" onclick="buyObsidian()">Kup</div>
         <div class="stonePickaxeCost">50000</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">

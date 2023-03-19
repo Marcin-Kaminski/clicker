@@ -47,54 +47,19 @@ body {
     background-color: black;
     cursor: pointer;
 }
-.stonePickaxe {
+.pickaxe {
     height: 80px;
     float: right;
+    margin-top: 10px;
 }
-.ironPickaxe {
-    height: 80px;
-    float: right;
-}
-.goldPickaxe {
-    height: 80px;
-    float: right;
-}
-.diamondPickaxe {
-    height: 80px;
-    float: right;
-}
-.obsidian {
-    height: 80px;
-    float: right;
-}
-.stonePickBox {
-    float: right;
-    margin-right: 10%;
-    margin-top: 10%;
-}
- .ironPickPox {
-    float: right;
-    margin-right: 10%;
-    margin-top: 10%;
-}
- .goldPickBox {
-    float: right;
-    margin-right: 10%;
-    margin-top: 10%;
-}
- .diamondPickBox {
-    float: right;
-    margin-right: 10%;
-    margin-top: 10%;
-}
-.obsidianBox {
+.PickBox {
     float: right;
     margin-right: 10%;
     margin-top: 10%;
 }
 .buyButton {
     float: right;
-    margin-top: 10%;
+    margin-top: 9%;
     margin-right: 30px;
     cursor: pointer;
     color: #dbdbde;

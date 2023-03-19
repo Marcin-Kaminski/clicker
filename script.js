@@ -5,6 +5,8 @@ var ironPickaxes = 0;
 var goldPickaxes = 0;
 var diamondPickaxes = 0;
 var obsidian = 0;
+var amount = 0;
+
 
 window.onload = function() {
     document.getElementById("score").innerHTML = score;
@@ -25,13 +27,21 @@ function reset()
 {
     onclick(location.reload())
 }
-function buyStonePickaxe()
+function buyPickaxe(pickaxeCost, plusPower)
 {
-    if (score >= stonePickaxeCost){
-        score = score - 15;
-        power = power + 1;
+    if (score >= pickaxeCost){
+        score = score - pickaxeCost;
+        power = power + plusPower;
         stonePickaxes = stonePickaxes + 1;
         document.getElementById("score").innerHTML = score;
         document.getElementById("power").innerHTML = 'Siła = ' + power;
+    }
+}
+function buyObsidian()
+{
+    if (score >= 50000){
+        score = score - 50000;
+        obsidian = obsidian + 1;
+        document.getElementById("obsidianCount") =
     }
 }
