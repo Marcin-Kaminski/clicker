@@ -1,11 +1,12 @@
 var score = 0;
 var power = 1;
-var stonePickaxes = 0;
-var ironPickaxes = 0;
-var goldPickaxes = 0;
-var diamondPickaxes = 0;
 var obsidian = 0;
-var amount = 0;
+var pickCounts = {
+     stonePickCount: 0,
+     ironPickCount: 0,
+     goldPickCount: 0,
+     diamondPickCount: 0,
+};
 
 
 window.onload = function() {
@@ -27,21 +28,23 @@ function reset()
 {
     onclick(location.reload())
 }
-function buyPickaxe(pickaxeCost, plusPower)
+function buyPickaxe(pickaxeCost, plusPower, count)
 {
     if (score >= pickaxeCost){
-        score = score - pickaxeCost;
-        power = power + plusPower;
-        stonePickaxes = stonePickaxes + 1;
+        score -= pickaxeCost;
+        power += plusPower;
+        pickCounts[count] += 1;
         document.getElementById("score").innerHTML = score;
         document.getElementById("power").innerHTML = 'Siła = ' + power;
+        document.getElementById(count).innerHTML = 'Ilość : ' + pickCounts[count];
     }
+
 }
 function buyObsidian()
 {
-    if (score >= 50000){
+    if (score >= 1){
         score = score - 50000;
         obsidian = obsidian + 1;
-        document.getElementById("obsidianCount") =
+        document.getElementById("obsidianCount").innerHTML = "Ilość: " + obsidian;
     }
 }
