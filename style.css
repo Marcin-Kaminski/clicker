@@ -5,18 +5,22 @@ body {
 }
 .leftBox {
     float: left;
-    width: 50%;
+    width: 40%;
 }
 .rightBox {
     float: right;
-    width: 50%;
+    width: 40%;
+}
+.middleBox {
+    float: left;
+    width: 20%;
 }
 .emeraldOre {
     margin-left: 10%;
     margin-top: 10%;
     margin-bottom: 50px;
     cursor: pointer;
-    float: left
+    float: left;
 }
 .clearfix {
     clear: both;
@@ -78,7 +82,7 @@ body {
     font-size: 30px;
     color: #dbdbde;
     margin-right: 25px;
-    margin-top: 30px
+    margin-top: 50px
 }
 .emeraldBuy {
     float: right;
@@ -93,4 +97,26 @@ body {
     font-size: 40px;
     color: #dbdbde;
 }
+.portalText {
+    color: #dbdbde;
+    font-size: 45px;
+    margin-left: 10%;
+    margin-top: 7%;
+    width: 400px;
+    height: 100px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: black;
+    cursor: pointer;
+    float: left;
+}
+.portal {
+    float: left;
+    width: 300px;
+    margin-top: 20%;
+}
+
 

@@ -38,13 +38,21 @@ function buyPickaxe(pickaxeCost, plusPower, count)
         document.getElementById("power").innerHTML = 'Siła = ' + power;
         document.getElementById(count).innerHTML = 'Ilość : ' + pickCounts[count];
     }
-
 }
 function buyObsidian()
 {
     if (score >= 1){
-        score = score - 50000;
+        score = score + 500000;
         obsidian = obsidian + 1;
         document.getElementById("obsidianCount").innerHTML = "Ilość: " + obsidian;
+        if (obsidian >= 10){
+            document.getElementById("portalText").innerHTML = "Kliknij, aby zbudować portal!"
+        }
+    }
+}
+function buildPortal()
+{
+    if (document.getElementById("portalText").innerHTML === "Kliknij, aby zbudować portal!") {
+        document.getElementById("portal").innerHTML = "<img id=\"portal\" src=\"photos/obsidianPortal.webp\" alt=\"\" class=\"portal\">\n"
     }
 }
