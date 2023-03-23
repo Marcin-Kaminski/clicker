@@ -18,52 +18,54 @@
 <body>
 <body style="background-color: #6d3434;">
 <div class="leftBoxNether">
-    <img src="photos/blaze.webp" alt="" class="emeraldOre">
+    <img src="photos/blaze.webp" alt="" class="blaze">
     <div class="hpBar">HP: </div>
 </div>
 <div class="middleBoxNether">
-    <div class="power">Siła: 0</div>
+    <div class="power" id="damage">Obrażenia: 0</div>
     <img onclick="goToEarth()" src="photos/obsidianPortal.webp" alt="" class="portal">
+    <img src="photos/emerald.webp" alt="" class="emeraldNether">
+    <div id="score" class="scoreNether"></div>
 </div>
 <div class="rightBoxNether">
     <div class="PickBox"> <!-- stone sword box -->
-        <div class="stonePickaxeCost" id="stonePickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost" id="stoneSwordCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
         <img src="photos/stoneSword.webp" alt="" class="pickaxe">
-        <div class="buyButton" id="buyStonePickaxe" onclick="buyPickaxe(15, 1, 'stonePickCount')">Kup</div>
+        <div class="buyButton" id="buyStonePickaxe" onclick="buyPickaxe(15, 1, 'stoneSwordCount')">Kup</div>
         <div class="stonePickaxeCost">15</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
     <div class="PickBox"> <!-- iron sword box -->
-        <div class="stonePickaxeCost" id="ironPickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost" id="ironSwordCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
         <img src="photos/ironSword.webp" alt="" class="pickaxe">
-        <div class="buyButton" id="buyIronPickaxe" onclick="buyPickaxe(150, 5, 'ironPickCount')">Kup</div>
+        <div class="buyButton" id="buyIronPickaxe" onclick="buyPickaxe(150, 5, 'ironSwordCount')">Kup</div>
         <div class="stonePickaxeCost">150</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
     <div class="PickBox"> <!-- gold sword box -->
-        <div class="stonePickaxeCost" id="goldPickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost" id="goldSwordCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
         <img src="photos/goldSword.webp" alt="" class="pickaxe">
-        <div class="buyButton" id="buyGoldPickaxe" onclick="buyPickaxe(1500, 50, 'goldPickCount')">Kup</div>
+        <div class="buyButton" id="buyGoldPickaxe" onclick="buyPickaxe(1500, 50, 'goldSwordCount')">Kup</div>
         <div class="stonePickaxeCost">1500</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
     <div class="PickBox"> <!-- diamond sword box -->
-        <div class="stonePickaxeCost" id="diamondPickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost" id="diamondSwordCount">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
         <img src="photos/diamondSword.webp" alt="" class="pickaxe">
-        <div class="buyButton" id="buyDiamondPickaxe" onclick="buyPickaxe(15000, 500, 'diamondPickCount')">Kup</div>
+        <div class="buyButton" id="buyDiamondPickaxe" onclick="buyPickaxe(15000, 500, 'diamondSwordCount')">Kup</div>
         <div class="stonePickaxeCost">15000</div>
         <img src="photos/emerald.webp" class="emeraldBuy" alt="">
     </div>
     <div class="clearfix"></div>
-    <div class="PickBox"> <!-- obsidian box -->
-        <div class="stonePickaxeCost" id="obsidianCount">Ilość: 0</div>
+    <div class="PickBox"> <!-- ender pearl box -->
+        <div class="stonePickaxeCost" id="enderPearlCount1">Ilość: 0</div>
         <div class="stonePickaxeCost"></div>
         <img src="photos/enderPearl.webp" alt="" class="pickaxe">
         <div class="buyButton" id="buyObsidian" onclick="buyObsidian()">Kup</div>
@@ -78,7 +80,7 @@
     <div class="buyBlazeButton">Przerób blaze rody</div>
     <img src="photos/blazePowder.webp" alt="" class="blazePowder">
     <div class="blazePowderQuantity">Ilość: 0</div>
-    <div class="enderPearlQuantity">Ilość: 0</div>
+    <div class="enderPearlQuantity" id="enderPearlCount2">Ilość: 0</div>
     <img src="photos/enderPearl.webp" alt="" class="enderPearl">
     <div class="buyBlazeButton">Przerób perły</div>
     <img src="photos/eyeOfEnder.webp" alt="" class="eyeOfEnder">

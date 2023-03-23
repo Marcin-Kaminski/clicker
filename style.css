@@ -118,7 +118,7 @@ body {
     float: left;
     margin-top: 10%;
     margin-left: 5%;
-    font-size: 40px;
+    font-size: 30px;
     color: #dbdbde;
 }
 .portalText {
@@ -216,4 +216,23 @@ body {
     float: left;
     font-size: 30px;
     color: #dbdbde;
+}
+.blaze {
+    margin-left: 10%;
+    margin-bottom: 50px;
+    cursor: pointer;
+    float: left;
+}
+.scoreNether {
+    margin-top: 24px;
+    font-size: 38px;
+    margin-left: 15px;
+    float: left;
+    color: #dbdbde;
+}
+.emeraldNether {
+    float: left;
+    margin-left: 10%;
+    height: 38px;
+    margin-top: 30px;
 }
