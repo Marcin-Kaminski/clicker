@@ -12,8 +12,79 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script type="text/javascript" src="script.js"></script>
     <title>Poziom 2 - Nether!</title>
+    <style>
+    </style>
 </head>
 <body>
+<body style="background-color: #6d3434;">
+<div class="leftBoxNether">
+    <img src="photos/blaze.webp" alt="" class="emeraldOre">
+    <div class="hpBar">HP: </div>
+</div>
+<div class="middleBoxNether">
+    <div class="power">Siła: 0</div>
+    <img onclick="goToEarth()" src="photos/obsidianPortal.webp" alt="" class="portal">
+</div>
+<div class="rightBoxNether">
+    <div class="PickBox"> <!-- stone sword box -->
+        <div class="stonePickaxeCost" id="stonePickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/stoneSword.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyStonePickaxe" onclick="buyPickaxe(15, 1, 'stonePickCount')">Kup</div>
+        <div class="stonePickaxeCost">15</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="PickBox"> <!-- iron sword box -->
+        <div class="stonePickaxeCost" id="ironPickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/ironSword.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyIronPickaxe" onclick="buyPickaxe(150, 5, 'ironPickCount')">Kup</div>
+        <div class="stonePickaxeCost">150</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="PickBox"> <!-- gold sword box -->
+        <div class="stonePickaxeCost" id="goldPickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/goldSword.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyGoldPickaxe" onclick="buyPickaxe(1500, 50, 'goldPickCount')">Kup</div>
+        <div class="stonePickaxeCost">1500</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="PickBox"> <!-- diamond sword box -->
+        <div class="stonePickaxeCost" id="diamondPickCount">Ilość: 0</div>
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/diamondSword.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyDiamondPickaxe" onclick="buyPickaxe(15000, 500, 'diamondPickCount')">Kup</div>
+        <div class="stonePickaxeCost">15000</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <div class="PickBox"> <!-- obsidian box -->
+        <div class="stonePickaxeCost" id="obsidianCount">Ilość: 0</div>
+        <div class="stonePickaxeCost"></div>
+        <img src="photos/enderPearl.webp" alt="" class="pickaxe">
+        <div class="buyButton" id="buyObsidian" onclick="buyObsidian()">Kup</div>
+        <div class="stonePickaxeCost">50000</div>
+        <img src="photos/emerald.webp" class="emeraldBuy" alt="">
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="bottomBoxNether">
+    <div class="blazeRodQuantity">Ilość: 0</div>
+    <img src="photos/blazeRod.webp" alt="" class="blazeRod">
+    <div class="buyBlazeButton">Przerób blaze rody</div>
+    <img src="photos/blazePowder.webp" alt="" class="blazePowder">
+    <div class="blazePowderQuantity">Ilość: 0</div>
+    <div class="enderPearlQuantity">Ilość: 0</div>
+    <img src="photos/enderPearl.webp" alt="" class="enderPearl">
+    <div class="buyBlazeButton">Przerób perły</div>
+    <img src="photos/eyeOfEnder.webp" alt="" class="eyeOfEnder">
+    <div class="eyeOfEnderQuantity">Ilość: 0</div>
+</div>
+
 
 </body>
 </html>

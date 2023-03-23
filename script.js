@@ -45,14 +45,24 @@ function buyObsidian()
         score = score + 500000;
         obsidian = obsidian + 1;
         document.getElementById("obsidianCount").innerHTML = "Ilość: " + obsidian;
-        if (obsidian >= 10){
-            document.getElementById("portalText").innerHTML = "Kliknij, aby zbudować portal!"
-        }
+        obsidian >= 10 ? document.getElementById("portalText").innerHTML = "Kliknij, aby zbudować portal!" : '';
     }
 }
 function buildPortal()
 {
-    if (document.getElementById("portalText").innerHTML === "Kliknij, aby zbudować portal!") {
-        document.getElementById("portal").innerHTML = "<img id=\"portal\" src=\"photos/obsidianPortal.webp\" alt=\"\" class=\"portal\">\n"
+    let portalText = document.getElementById("portalText").innerHTML;
+    if (portalText === "Kliknij, aby zbudować portal!" && obsidian >= 10) {
+        let portal = document.getElementById("portal");
+        portal.innerHTML = "<img onclick='goToNether()' id=\"portal\" src=\"photos/obsidianPortal.webp\" alt=\"\" class=\"portal\">\n"
+        obsidian -= 10;
+        document.getElementById("obsidianCount").innerHTML = "Ilość: " + obsidian;
     }
+}
+function goToNether()
+{
+    window.location = "nether.html";
+}
+function goToEarth()
+{
+    window.location = "index.html";
 }

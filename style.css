@@ -7,14 +7,36 @@ body {
     float: left;
     width: 40%;
 }
+.leftBoxNether {
+    float: left;
+    width: 40%;
+    height: 80%;
+}
+
 .rightBox {
     float: right;
     width: 40%;
 }
+.rightBoxNether {
+    float: right;
+    width: 40%;
+    height: 80%;
+}
+
 .middleBox {
     float: left;
     width: 20%;
 }
+.middleBoxNether {
+    float: left;
+    width: 20%;
+    height: 80%;
+}
+.bottomBoxNether{
+    height: 20%;
+    margin-top: 3%;
+}
+
 .emeraldOre {
     margin-left: 10%;
     margin-top: 10%;
@@ -26,14 +48,16 @@ body {
     clear: both;
 }
 .score {
-    font-size: 120px;
+    margin-top: 20px;
+    font-size: 85px;
     margin-left: 15px;
     float: left;
+    color: #dbdbde;
 }
 .emerald {
     float: left;
     margin-left: 10%;
-    height: 100px;
+    height: 85px;
     margin-top: 30px;
 }
 .reset {
@@ -82,13 +106,13 @@ body {
     font-size: 30px;
     color: #dbdbde;
     margin-right: 25px;
-    margin-top: 50px
+    margin-top: 40px
 }
 .emeraldBuy {
     float: right;
     margin-right: 5px;
-    height: 31px;
-    margin-top: 35px;
+    height: 30px;
+    margin-top: 45px;
 }
 .power {
     float: left;
@@ -117,6 +141,79 @@ body {
     float: left;
     width: 300px;
     margin-top: 20%;
+    cursor: pointer;
 }
-
-
+.hpBar {
+    color: #dbdbde;
+    font-size: 45px;
+    margin-left: 10%;
+    margin-top: 7%;
+    width: 400px;
+    height: 50px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: black;
+}
+.blazeRod {
+    height: 40px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.blazePowder {
+    height: 40px;
+    float: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.buyBlazeButton {
+    float: left;
+    cursor: pointer;
+    color: #dbdbde;
+    font-size: 16px;
+    width: 140px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: black;
+}
+.enderPearl {
+    float: left;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.eyeOfEnder {
+    float: left;
+    height: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.blazeRodQuantity {
+    float: left;
+    font-size: 30px;
+    color: #dbdbde;
+    margin-left: 60px;
+}
+.blazePowderQuantity {
+    float: left;
+    font-size: 30px;
+    color: #dbdbde;
+}
+.enderPearlQuantity {
+    float: left;
+    font-size: 30px;
+    color: #dbdbde;
+    margin-left: 345px;
+}
+.eyeOfEnderQuantity {
+    float: left;
+    font-size: 30px;
+    color: #dbdbde;
+}
