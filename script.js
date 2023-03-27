@@ -1,8 +1,9 @@
-let score = parseInt(localStorage.getItem('score')) || 0;
-let power = parseInt(localStorage.getItem('power')) || 1;
+let data = JSON.parse(localStorage.getItem("data"));
+let score = data.score || 0;
+let power = data.power || 1;
+
 let obsidian = parseInt(localStorage.getItem('obsidian')) || 0;
-let damage = parseInt(localStorage.getItem('damage')) || 0;
-let pickCounts = JSON.parse(localStorage.getItem('picksCount')) || {
+let pickCounts = data.counts || {
     stonePickCount: 0,
     ironPickCount: 0,
     goldPickCount: 0,
@@ -13,6 +14,11 @@ let swordCounts = {
     ironSwordCount: 0,
     goldSwordCount: 0,
     diamondSwordCount: 0
+}
+let dataToLocalStorage = {
+    score: score,
+    power: power,
+    counts: pickCounts
 }
 function gEBI(variable) // czemu nie tak? dużo mniej kodu
 {
@@ -29,26 +35,30 @@ function addScore()
 window.onload = function() {
     document.getElementById("score").innerHTML = score;
     document.getElementById("power").innerHTML = 'Siła = ' + power;
+    document.getElementById("obsidianCount").innerHTML = 'Ilość: ' + obsidian;
+    document.getElementById("damage").innerHTML = "Obrażenia: " + damage;
 }
 function reset()
 {
+    localStorage.clear();
     location.reload()
-    power = 0;
-    localStorage.setItem('power', power.toString());
-    score = 0;
-    localStorage.setItem('score', score.toString());
-    document.getElementById("stonePickCount").innerHTML = 0;
-    document.getElementById("ironPickCount").innerHTML = 0;
-    document.getElementById("goldPickCount").innerHTML = 0;
-    document.getElementById("diamondPickCount").innerHTML = 0;
-    document.getElementById("stoneSwordCount").innerHTML = 0;
-    document.getElementById("ironSwordCount").innerHTML = 0;
-    document.getElementById("goldSwordCount").innerHTML = 0;
-    document.getElementById("diamondSwordCount").innerHTML = 0;
-    document.getElementById("enderPearlCount1").innerHTML = 0;
-    document.getElementById("enderPearlCount2").innerHTML = 0;
-    document.getElementById("diamondSwordCount").innerHTML = 0;
-    document.getElementById("obsidian").innerHTML = 0;
+    // power = 0;
+    // localStorage.setItem('power', power.toString());
+    // score = 0;
+    // localStorage.setItem('score', score.toString());
+    // obsidian = 0;
+    // localStorage.setItem('obsidian', obsidian.toString());
+    // document.getElementById("stonePickCount").innerHTML = 0;
+    // document.getElementById("ironPickCount").innerHTML = 0;
+    // document.getElementById("goldPickCount").innerHTML = 0;
+    // document.getElementById("diamondPickCount").innerHTML = 0;
+    // document.getElementById("stoneSwordCount").innerHTML = 0;
+    // document.getElementById("ironSwordCount").innerHTML = 0;
+    // document.getElementById("goldSwordCount").innerHTML = 0;
+    // document.getElementById("diamondSwordCount").innerHTML = 0;
+    // document.getElementById("enderPearlCount1").innerHTML = 0;
+    // document.getElementById("enderPearlCount2").innerHTML = 0;
+    // document.getElementById("diamondSwordCount").innerHTML = 0;
 }
 function buyPickaxe(pickaxeCost, plusPower, count)
 {
@@ -56,12 +66,11 @@ function buyPickaxe(pickaxeCost, plusPower, count)
         score -= pickaxeCost;
         power += plusPower;
         pickCounts[count] += 1;
-        localStorage.setItem('score', score.toString());
         document.getElementById("score").innerHTML = score;
-        localStorage.setItem('power', power.toString());
         document.getElementById("power").innerHTML = 'Siła = ' + power;
-        localStorage.setItem(count, count.toString());
         document.getElementById(count).innerHTML = 'Ilość : ' + pickCounts[count];
+
+        localStorage.setItem('data', JSON.stringify(dataToLocalStorage))
     }
 }
 function buySword(swordCost, plusDamage, count)
@@ -93,6 +102,7 @@ function buildPortal()
         let portal = document.getElementById("portal");
         portal.innerHTML = "<img onclick='goToNether()' id=\"portal\" src=\"photos/obsidianPortal.webp\" alt=\"\" class=\"portal\">\n"
         obsidian -= 10;
+        localStorage.setItem('obsidian', obsidian.toString())
         document.getElementById("obsidianCount").innerHTML = "Ilość: " + obsidian;
     }
 }
@@ -103,4 +113,5 @@ function goToNether()
 function goToEarth()
 {
     window.location = "index.html";
+
 }
