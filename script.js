@@ -1,5 +1,4 @@
 let data = JSON.parse(localStorage.getItem("data"));
-let score, power, pickCounts, damage, swordCounts, obsidian, isPortalSet, enderPearl;
 let portal = document.getElementById("portal");
 if (data === null) {
     score = 0;
@@ -12,6 +11,7 @@ if (data === null) {
     blazePowder = 0;
     eyeOfEnder = 0;
     blazeHP = 10000;
+    isEndPortalSet = 0;
     pickCounts = {
         stonePickCount: 0,
         ironPickCount: 0,
@@ -37,21 +37,8 @@ if (data === null) {
     blazePowder = data.blazePowder;
     eyeOfEnder = data.eyeOfEnder;
     blazeHP = data.blazeHP;
+    isEndPortalSet = data.isEndPortalSet
 
-}
-let dataToLocalStorage = {
-    score: score,
-    power: power,
-    pickCounts: pickCounts,
-    swordCounts: swordCounts,
-    damage: damage,
-    obsidian: obsidian,
-    isPortalSet: isPortalSet,
-    enderPearl: enderPearl,
-    blazeRod: blazeRod,
-    blazePowder: blazePowder,
-    eyeOfEnder: eyeOfEnder,
-    blazeHP: blazeHP
 }
 function setToLocalStorage() // FUNCKJA SŁUŻĄCA DO ZAPISU DANYCH DO LS
 {
@@ -67,7 +54,8 @@ function setToLocalStorage() // FUNCKJA SŁUŻĄCA DO ZAPISU DANYCH DO LS
         blazeRod: blazeRod,
         blazePowder: blazePowder,
         eyeOfEnder: eyeOfEnder,
-        blazeHP: blazeHP
+        blazeHP: blazeHP,
+        isEndPortalSet: isEndPortalSet
     }
     localStorage.setItem('data', JSON.stringify(dataToLocalStoraged));
 }
@@ -106,7 +94,7 @@ window.onload = function() {
     }
     if (isPortalSet === 1) {
         gEBI("portal").innerHTML = "<img onclick='goToNether()' id=\"portal\" src=\"photos/obsidianPortal.webp\" alt=\"\" class=\"portal\">\n"
-        gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera..."
+        gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera!"
     }
 }
 function reset()
@@ -150,12 +138,13 @@ function buyObsidian()
         obsidian += 11;
         setToLocalStorage(obsidian);
         gEBI("obsidianCount").innerHTML = "Ilość: " + obsidian;
+        gEBI('score').innerHTML = score;
         if (isPortalSet === 0) {
             obsidian >= 10 ?  gEBI('portalText').innerHTML = "Kliknij, aby zbudować portal!" : '';
         }
     }
 }
-function buildPortal()
+function buildNetherPortal()
 {
     let portalText = document.getElementById("portalText").innerHTML;
     if (isPortalSet === 0) {
@@ -167,7 +156,7 @@ function buildPortal()
             setToLocalStorage(obsidian)
             setToLocalStorage(isPortalSet)
             gEBI("obsidianCount").innerHTML = "Ilość: " + obsidian;
-            gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera..."
+            gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera!"
         }
     }
 }
@@ -232,4 +221,8 @@ function goToNether()
 function goToEarth()
 {
     window.location = "index.html";
+}
+function goToEnd()
+{
+    window.location ="end.html"
 }

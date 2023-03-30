@@ -18,6 +18,7 @@
 <body style="background-color: #6d3434;">
 <div class="leftBoxNether">
     <img src="photos/blaze.webp" alt="" onclick="killBlaze()" id="blaze" class="blaze">
+    <div class="clearfix"></div>
     <div class="hpBar">
         <div class="10000" id="blazeHP">10000&nbsp;</div>
         <div class="10000">&nbsp;/ 10000</div>
@@ -27,6 +28,7 @@
 <div class="middleBoxNether">
     <div class="power" id="damage">Obrażenia: 0</div>
     <img onclick="goToEarth()" src="photos/obsidianPortal.webp" alt="" class="portal">
+    <div class="clearfix"></div>
     <img src="photos/emerald.webp" alt="" class="emeraldNether">
     <div id="score" class="scoreNether"></div>
 </div>
@@ -83,11 +85,13 @@
     <div class="buyBlazeButton" onclick="blazeRodIntoPowder()">Przerób blaze rody</div>
     <img src="photos/blazePowder.webp" alt="" class="blazePowder">
     <div class="blazePowderQuantity" id="blazePowderQuantity">Ilość: 0</div>
-    <div class="enderPearlQuantity" id="enderPearlQuantity2">Ilość: 0</div>
-    <img src="photos/enderPearl.webp" alt="" class="enderPearl">
-    <div class="buyBlazeButton" onclick="enderPearlIntoEyeOfEnder()">Przerób perły</div>
-    <img src="photos/eyeOfEnder.webp" alt="" class="eyeOfEnder">
-    <div class="eyeOfEnderQuantity" id="eyeOfEnderQuantity">Ilość: 0</div>
+    <div class="float-right">
+        <div class="enderPearlQuantity" id="enderPearlQuantity2">Ilość: 0</div>
+        <img src="photos/enderPearl.webp" alt="" class="enderPearl">
+        <div class="buyBlazeButton" onclick="enderPearlIntoEyeOfEnder()">Przerób perły</div>
+        <img src="photos/eyeOfEnder.webp" alt="" class="eyeOfEnder">
+        <div class="eyeOfEnderQuantity" id="eyeOfEnderQuantity">Ilość: 0</div>
+    </div>
 </div>
 
 
