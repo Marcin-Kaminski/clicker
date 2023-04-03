@@ -15,30 +15,30 @@
 <body style="background-color: #2b2539;">
 <div class="leftBox">
     <div class="hpBar">
-        <div class="10000" id="blazeHP">0&nbsp;</div>
-        <div class="10000">&nbsp;/ 12</div>
-        <div class="HP">&nbsp;Zniszczonych</div>
+        <div class="endSipkeCountFont" id="endSpikeQuantity">0</div>
+        <div class="endSipkeCountFont">&nbsp;/ 12</div>
+        <div class="endSipkeCountFont">&nbsp;Zniszczonych</div>
     </div>
     <div class="clearfix"></div>
-<img src="photos/endSpike.webp" alt="" class="endSpike">
+<img src="photos/endSpike.webp" alt="" class="endSpike" onclick="beatEndSpikes()">
     <div class="clearfix"></div>
-    <div class="hpBar">
-        <div class="10000" id="blazeHP">50000&nbsp;</div>
-        <div class="10000">&nbsp;/ 50000</div>
-        <div class="HP">&nbsp;HP</div>
+    <div class="endSpikeHpBar" id="endSpikeHpBar">
+        <div class="endSipkeCountFont" id="endSpikeHP">50000</div>
+        <div class="endSipkeCountFont" id="endSpikeHP2" >&nbsp;/ 50000</div>
+        <div class="endSipkeCountFont" id="endSpikeHP3">&nbsp;HP</div>
     </div>
 </div>
 <div class="middleBox">
-    <img onclick='goToEarth()' id="portal" src="photos/obsidianPortal.webp" alt="" class="portal">
-
+    <div id="endPortalEnd"></div>
+    <img src="photos/endPortal.webp" alt="" class="endPortalEnd" onclick="goToEarth()">
 </div>
 <div class="rightBox">
-    <img src="photos/enderDragon.webp" alt="" class="enderDragon">
+    <img src="photos/enderDragon.webp" alt="" class="enderDragon" id="enderDragon" onclick="killEnderDragon()">
     <div class="clearfix"></div>
     <div class="dragonHpBar">
-        <div class="10000" id="blazeHP">1000000&nbsp;</div>
-        <div class="10000">&nbsp;/ 1000000</div>
-        <div class="HP">&nbsp;HP</div>
+        <div class="endSipkeCountFont" id="enderDragonHP">1000000</div>
+        <div class="endSipkeCountFont">&nbsp;/ 1000000</div>
+        <div class="endSipkeCountFont">&nbsp;HP</div>
     </div>
 </div>
 

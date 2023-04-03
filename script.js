@@ -12,6 +12,9 @@ if (data === null) {
     eyeOfEnder = 0;
     blazeHP = 10000;
     isEndPortalSet = 0;
+    endSpikeQuantity = 0;
+    endSpikeHP = 50000;
+    enderDragonHP = 1000000;
     pickCounts = {
         stonePickCount: 0,
         ironPickCount: 0,
@@ -37,10 +40,12 @@ if (data === null) {
     blazePowder = data.blazePowder;
     eyeOfEnder = data.eyeOfEnder;
     blazeHP = data.blazeHP;
-    isEndPortalSet = data.isEndPortalSet
-
+    isEndPortalSet = data.isEndPortalSet;
+    endSpikeQuantity = data.endSpikeQuantity;
+    endSpikeHP = data.endSpikeHP;
+    enderDragonHP = data.enderDragonHP;
 }
-function setToLocalStorage() // FUNCKJA SŁUŻĄCA DO ZAPISU DANYCH DO LS
+function setToLocalStorage()
 {
     let dataToLocalStoraged = {
         score: score,
@@ -55,7 +60,10 @@ function setToLocalStorage() // FUNCKJA SŁUŻĄCA DO ZAPISU DANYCH DO LS
         blazePowder: blazePowder,
         eyeOfEnder: eyeOfEnder,
         blazeHP: blazeHP,
-        isEndPortalSet: isEndPortalSet
+        isEndPortalSet: isEndPortalSet,
+        endSpikeQuantity: endSpikeQuantity,
+        endSpikeHP: endSpikeHP,
+        enderDragonHP: enderDragonHP
     }
     localStorage.setItem('data', JSON.stringify(dataToLocalStoraged));
 }
@@ -70,8 +78,8 @@ function addScore()
     gEBI('score').innerHTML = score;
 }
 window.onload = function() {
-    gEBI('score').innerHTML = score;
     if (gEBI('power')) {
+        gEBI('score').innerHTML = score;
         gEBI('obsidianCount').innerHTML = 'Ilość: ' + obsidian;
         gEBI('power').innerHTML = 'Siła = ' + power;
         gEBI('stonePickCount').innerHTML = 'Ilość: ' + data.pickCounts['stonePickCount'];
@@ -80,6 +88,7 @@ window.onload = function() {
         gEBI('diamondPickCount').innerHTML = 'Ilość: ' + data.pickCounts['diamondPickCount'];
     }
     if (gEBI('damage')) {
+        gEBI('score').innerHTML = score;
         gEBI('damage').innerHTML = "Obrażenia = " + damage;
         gEBI('stoneSwordCount').innerHTML = 'Ilość: ' + data.swordCounts['stoneSwordCount'];
         gEBI('ironSwordCount').innerHTML = 'Ilość: ' + data.swordCounts['ironSwordCount'];
@@ -92,9 +101,27 @@ window.onload = function() {
         gEBI('eyeOfEnderQuantity').innerHTML = 'Ilość: ' + data.eyeOfEnder;
         gEBI('blazeHP').innerHTML = data.blazeHP;
     }
+    if (gEBI('enderDragon')) {
+        gEBI('endSpikeQuantity').innerHTML = endSpikeQuantity;
+        gEBI('endSpikeHP').innerHTML = endSpikeHP;
+        if (endSpikeQuantity >= 12){
+            gEBI('endSpikeHP').innerHTML = '';
+            gEBI('endSpikeHP2').innerHTML = 'Ostatni zniszczony! pora na smoka!';
+            gEBI('endSpikeHP3').innerHTML = '';
+            gEBI('enderDragonHP')
+
+        }
+    }
     if (isPortalSet === 1) {
         gEBI("portal").innerHTML = "<img onclick='goToNether()' id=\"portal\" src=\"photos/obsidianPortal.webp\" alt=\"\" class=\"portal\">\n"
-        gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera!"
+        gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera!";
+        if (isEndPortalSet === 0 && eyeOfEnder >= 12) {
+            gEBI('portalText').innerHTML = "Kliknij, aby zbudować portal!";
+        }
+    }
+    if (isEndPortalSet === 1) {
+        gEBI("endPortal").innerHTML = "<img src=\"photos/endPortal.webp\" alt=\"\" class=\"endPortal\" onclick=\"goToEnd()\">"
+        gEBI('portalText').innerHTML = "Przygotuj się do walki ze smokiem!"
     }
 }
 function reset()
@@ -144,7 +171,7 @@ function buyObsidian()
         }
     }
 }
-function buildNetherPortal()
+function buildPortal()
 {
     let portalText = document.getElementById("portalText").innerHTML;
     if (isPortalSet === 0) {
@@ -157,6 +184,18 @@ function buildNetherPortal()
             setToLocalStorage(isPortalSet)
             gEBI("obsidianCount").innerHTML = "Ilość: " + obsidian;
             gEBI('portalText').innerHTML = "Teraz zbierz 12 oczu endera!"
+        }
+    }
+    if (isEndPortalSet === 0) {
+        if (portalText === "Kliknij, aby zbudować portal!" && eyeOfEnder >= 12) {
+            let endPortal = gEBI("endPortal");
+            endPortal.innerHTML = "<img src=\"photos/endPortal.webp\" alt=\"\" class=\"endPortal\" onclick=\"goToEnd()\">"
+            eyeOfEnder -= 12;
+            isEndPortalSet += 1;
+            setToLocalStorage(eyeOfEnder);
+            setToLocalStorage(isEndPortalSet);
+            gEBI("eyeOfEnderQuantity").innerHTML = "Ilość: " + eyeOfEnder;
+            gEBI('portalText').innerHTML = "Przygotuj się do walki ze smokiem!";
         }
     }
 }
@@ -196,7 +235,7 @@ function blazeRodIntoPowder()
         setToLocalStorage(blazeRod);
         setToLocalStorage(blazePowder);
         gEBI('blazeRodQuantity').innerHTML = "Ilość: " + blazeRod;
-        gEBI('blazePowderQuantity').innerHTML = "Ilość: " + blazePowder
+        gEBI('blazePowderQuantity').innerHTML = "Ilość: " + blazePowder;
     }
 }
 function enderPearlIntoEyeOfEnder()
@@ -212,7 +251,44 @@ function enderPearlIntoEyeOfEnder()
         gEBI('enderPearlQuantity1').innerHTML = "Ilość: " + enderPearl;
         gEBI('enderPearlQuantity2').innerHTML = "Ilość: " + enderPearl;
         gEBI('eyeOfEnderQuantity').innerHTML = "Ilość: " + eyeOfEnder;
+
     }
+}
+function beatEndSpikes ()
+{
+    if (endSpikeHP - damage >= 0){
+        endSpikeHP -= damage;
+        setToLocalStorage(endSpikeHP);
+        gEBI('endSpikeHP').innerHTML = endSpikeHP;
+    } else {
+        endSpikeHP = 50000;
+        setToLocalStorage(endSpikeHP);
+        gEBI('endSpikeHP').innerHTML = endSpikeHP;
+        endSpikeQuantity += 1
+        setToLocalStorage(endSpikeQuantity)
+        gEBI('endSpikeQuantity').innerHTML = endSpikeQuantity;
+    }
+    if (endSpikeQuantity >= 12){
+        gEBI('endSpikeHP').innerHTML = '';
+        gEBI('endSpikeHP2').innerHTML = 'To był ostatni! pora na smoka!';
+        gEBI('endSpikeHP3').innerHTML = '';
+    }
+}
+function killEnderDragon ()
+{
+    if (enderDragonHP - damage >= 0) {
+        enderDragonHP -= damage;
+        setToLocalStorage(enderDragonHP);
+        gEBI('enderDragonHP').innerHTML = enderDragonHP;
+        if (endSpikeQuantity !== 12) {
+            enderDragonHP <= 900000 ? enderDragonHP = 1000000 : '';
+            setToLocalStorage(enderDragonHP);
+            gEBI('enderDragonHP').innerHTML = enderDragonHP;
+        }
+    } else {
+
+    }
+
 }
 function goToNether()
 {
