@@ -242,7 +242,7 @@ body {
 .endPortal {
     float: left;
     width: 300px;
-    margin-top: 20%;
+    margin-top: 14%;
     cursor: pointer;
 }
 .endSpike {
@@ -294,4 +294,25 @@ body {
     text-align: center;
     border-radius: 45px;
     background-color: black;
+}
+.lettering {
+    color: white;
+    font-size: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+}
+.resetButton {
+    width: 250px;
+    height: 120px;
+    border: white 1px solid;
+    border-radius: 25px;
+    margin-top: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

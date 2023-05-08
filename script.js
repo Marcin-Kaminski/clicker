@@ -159,10 +159,10 @@ function buySword(swordCost, plusDamage, count)
 }
 function buyObsidian()
 {
-    if (score >= 1){
-        score += 500000;
+    if (score >= 500000){
+        score -= 500000;
         setToLocalStorage(score);
-        obsidian += 11;
+        obsidian += 1;
         setToLocalStorage(obsidian);
         gEBI("obsidianCount").innerHTML = "Ilość: " + obsidian;
         gEBI('score').innerHTML = score;
@@ -286,7 +286,7 @@ function killEnderDragon ()
             gEBI('enderDragonHP').innerHTML = enderDragonHP;
         }
     } else {
-
+        enderDragonHP <= 0 ? window.location = "gg.html" : '';
     }
 
 }
@@ -300,5 +300,10 @@ function goToEarth()
 }
 function goToEnd()
 {
-    window.location ="end.html"
+    window.location ="end.html";
+}
+function resetGame()
+{
+    window.location = "index.html";
+    localStorage.clear();
 }
